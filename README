@@ -1,0 +1,10 @@
+tehnical design rn:
+massive world means massive lag... jk it means more memory.
+
+so ima do what noita does with multi threading for performance:
+* they run the tick updating on chunks of pixels.
+(to prevent data corruption they update in a checkerboard pattern so no two threads touch the same data at once)
+he said they just do 4 phases of ticking, each phase has its own chunks of pixels to simulate and all they do is add them add to a threadpool and wait for it to finish and then go to the next phase until all 4 complete. this works well if the world is a 2d grid which it will be for me maybe??
+
+* they also stream chunks which means that the entire world isnt loaded at once, just the ones you can see and a little more yea.
+
